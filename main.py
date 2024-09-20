@@ -150,7 +150,8 @@ def check_ya_token(token):
 
 
 if __name__ == "__main__":
-    os.mkdir("user_photos")
+    if "user_photos" not in os.listdir():
+        os.mkdir("user_photos")
     token = open("access_token.txt", "r").read()
     user_id = input("Введите id пользователя: ")
 
